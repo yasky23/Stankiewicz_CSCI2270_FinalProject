@@ -1,0 +1,34 @@
+---Method Explained---
+
+void createTiles();
+  This creates a graph system of the 81 tiles. No paramters required.
+
+void createMines(std::string firstGuess);
+  This creates 10 random mines on the map of 81 tiles. It takes in a string paaremter for your first guess to make sure
+  a mine isn't created on the first tile you guess leading to an auto loss.
+  
+void createTileEdges();
+  This creates the required vertices between the tiles created in the create tiles functio.
+  
+void assignMines();
+  This code actually assigns the 10 mines which were created in createMines and put into a list.
+  
+void displayBoard();
+  Displays the game board with tiles hit, adjacent mines, and tiles still not guessed, as well as empty space.
+  
+void firstCheck(std::string guess);
+  This checks your guess with the special condition of it being your first. So you can;t lose. The string parameter
+  is the location of the guess.
+  
+bool guessCheck(std::string guess);
+  Same as above except true or false depending if you hit a mine or not. If you did it returns true, if not false
+  and the game keeps going.
+  
+int minesByTile(tile* mineCheck);
+  Takes the address of the tile. Checks it's adjacent members to see if they're mines. 
+  Updates it's mines by value accordingly.
+  
+bool gameWon();
+  Checks to see if you won the game, by checking if every tile which is not a mine has been visited.
+  
+  
